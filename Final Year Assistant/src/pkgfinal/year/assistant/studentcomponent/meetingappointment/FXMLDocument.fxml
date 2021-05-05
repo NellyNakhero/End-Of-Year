@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="rootpane" prefHeight="588.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkgfinal.year.assistant.meetingappointment.AppointmentController">
+   <children>
+      <Pane fx:id="leftpane" prefHeight="588.0" prefWidth="294.0" style="-fx-background-color: #996b99;">
+         <children>
+            <ImageView fitHeight="94.0" fitWidth="91.0" layoutX="97.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/images/DateIcon.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="32.0" layoutY="182.0" text="By Rescheduling The Meeting You Agree To">
+               <font>
+                  <Font name="Agency FB Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="44.0" layoutY="205.0" text="the following points -:">
+               <font>
+                  <Font name="Agency FB Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="46.0" layoutY="229.0" text="- You won't miss the scheduled appointment">
+               <font>
+                  <Font name="Agency FB Bold" size="14.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" top="8.0" />
+               </padding>
+            </Label>
+            <Label layoutX="46.0" layoutY="254.0" text="- You will stay panctual with the appointment times.">
+               <font>
+                  <Font name="Agency FB Bold" size="14.0" />
+               </font>
+               <padding>
+                  <Insets top="25.0" />
+               </padding>
+            </Label>
+            <Label layoutX="49.0" layoutY="294.0" text="- You cant reschedule after its due.">
+               <font>
+                  <Font name="Agency FB Bold" size="14.0" />
+               </font>
+               <padding>
+                  <Insets top="25.0" />
+               </padding>
+            </Label>
+            <TextField editable="false" layoutX="19.0" layoutY="543.0" prefHeight="35.0" prefWidth="250.0" promptText="Powered By Nelly A." style="-fx-background-color: transparent;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </TextField>
+            <Label layoutX="19.0" layoutY="421.0" text="Note:">
+               <font>
+                  <Font name="Agency FB Bold" size="18.0" />
+               </font>
+               <padding>
+                  <Insets top="25.0" />
+               </padding>
+            </Label>
+            <Label layoutX="62.0" layoutY="451.0" text="Higlighted hrs are the recomended appointment &#10;hours.&#10;However, upon consulation, any&#10;time can be set.&#10;">
+               <font>
+                  <Font name="Agency FB Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label layoutX="362.0" layoutY="14.0" prefHeight="43.0" prefWidth="270.0" text="Reschedule Appointment">
+         <font>
+            <Font name="Algerian" size="20.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="new_appontment_date" layoutX="360.0" layoutY="162.0" prefHeight="27.0" prefWidth="270.0" />
+      <Label layoutX="360.0" layoutY="143.0" text="Select a new date for your appointment">
+         <font>
+            <Font name="Agency FB Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="360.0" layoutY="215.0" text="Select a new time for your appointment">
+         <font>
+            <Font name="Agency FB Bold" size="14.0" />
+         </font>
+      </Label>
+      <Pane fx:id="Hrs_Entered_Pane" layoutX="378.0" layoutY="246.0" prefHeight="71.0" prefWidth="84.0" style="-fx-background-color: #DADADA;">
+         <children>
+            <Label layoutX="32.0" layoutY="14.0" text="HRS" textFill="#948d8d">
+               <font>
+                  <Font name="Agency FB Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="HRS" layoutY="37.0" onAction="#HRS_onaction" prefHeight="35.0" prefWidth="84.0" promptText="Enter Text" style="-fx-background-color: transparent;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </TextField>
+         </children>
+      </Pane>
+      <Pane layoutX="506.0" layoutY="246.0" prefHeight="71.0" prefWidth="84.0" style="-fx-background-color: #DADADA;">
+         <children>
+            <Label layoutX="30.0" layoutY="14.0" text="MIN" textFill="#948d8d">
+               <font>
+                  <Font name="Agency FB Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="MIN" layoutY="40.0" onAction="#MIN_onaction" prefHeight="35.0" prefWidth="84.0" promptText="Enter Text" style="-fx-background-color: transparent;" />
+         </children>
+      </Pane>
+      <Pane fx:id="AM_7_box" layoutX="360.0" layoutY="340.0" onMouseClicked="#AM_7_box_cliked" prefHeight="43.0" prefWidth="53.0" style="-fx-background-color: #DADADA;">
+         <children>
+            <Label fx:id="AM_7" layoutX="17.0" layoutY="13.0" text="7 AM" textFill="#948d8d">
+               <font>
+                  <Font name="Agency FB Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="AM_8_box" layoutX="442.0" layoutY="340.0" onMouseClicked="#AM_8_box_cliked" prefHeight="43.0" prefWidth="53.0" style="-fx-background-color: #DADADA;">
+         <children>
+            <Label fx:id="AM_8" layoutX="17.0" layoutY="13.0" text="8 AM" textFill="#948d8d">
+               <font>
+                  <Font name="Agency FB Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="AM_9_box" layoutX="522.0" layoutY="340.0" prefHeight="43.0" prefWidth="53.0" style="-fx-background-color: #DADADA;">
+         <children>
+            <Label layoutX="17.0" layoutY="13.0" onMouseClicked="#AM_9_box_cliked" text="9 AM" textFill="#948d8d">
+               <font>
+                  <Font name="Agency FB Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="AM_10_box" layoutX="604.0" layoutY="340.0" onMouseClicked="#AM_10_box_cliked" prefHeight="43.0" prefWidth="53.0" style="-fx-background-color: #996b99;">
+         <children>
+            <Label layoutX="17.0" layoutY="13.0" text="10 AM" textFill="#f2efef">
+               <font>
+                  <Font name="Agency FB Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="AM_11_box" layoutX="360.0" layoutY="402.0" onMouseClicked="#AM_11_box_cloked" prefHeight="43.0" prefWidth="53.0" style="-fx-background-color: #996b99;">
+         <children>
+            <Label layoutX="17.0" layoutY="13.0" text="11 AM" textFill="#f5eded">
+               <font>
+                  <Font name="Agency FB Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="AM_12_box" layoutX="442.0" layoutY="402.0" onMouseClicked="#AM_12_box_cloked" prefHeight="43.0" prefWidth="53.0" style="-fx-background-color: #996b99;">
+         <children>
+            <Label layoutX="17.0" layoutY="13.0" text="12 AM" textFill="#f8f7f7">
+               <font>
+                  <Font name="Agency FB Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="PM_1_box" layoutX="523.0" layoutY="402.0" onMouseClicked="#PM_1_box_cliked" prefHeight="43.0" prefWidth="53.0" style="-fx-background-color: #DADADA;">
+         <children>
+            <Label layoutX="17.0" layoutY="13.0" text="1 PM" textFill="#948d8d">
+               <font>
+                  <Font name="Agency FB Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="PM_2_box" layoutX="604.0" layoutY="408.0" onMouseClicked="#PM_2_box_cliked" prefHeight="43.0" prefWidth="53.0" style="-fx-background-color: #DADADA;">
+         <children>
+            <Label layoutX="17.0" layoutY="13.0" text="2 PM" textFill="#948d8d">
+               <font>
+                  <Font name="Agency FB Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="PM_3_box" layoutX="360.0" layoutY="460.0" onMouseClicked="#PM_3_box_cliked" prefHeight="43.0" prefWidth="53.0" style="-fx-background-color: #DADADA;">
+         <children>
+            <Label layoutX="17.0" layoutY="13.0" text="3PM" textFill="#948d8d">
+               <font>
+                  <Font name="Agency FB Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="PM_4_box" layoutX="442.0" layoutY="460.0" onMouseClicked="#PM_4_box_cliked" prefHeight="43.0" prefWidth="53.0" style="-fx-background-color: #996b99;">
+         <children>
+            <Label layoutX="17.0" layoutY="13.0" text="4 PM" textFill="#f5f2f2">
+               <font>
+                  <Font name="Agency FB Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="PM_5_box" layoutX="522.0" layoutY="460.0" onMouseClicked="#PM_5_box_cliked" prefHeight="43.0" prefWidth="53.0" style="-fx-background-color: #DADADA;">
+         <children>
+            <Label layoutX="17.0" layoutY="13.0" text="5 PM" textFill="#948d8d">
+               <font>
+                  <Font name="Agency FB Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="PM_6_box" layoutX="604.0" layoutY="460.0" onMouseClicked="#PM_6_box_cliked" prefHeight="43.0" prefWidth="53.0" style="-fx-background-color: #DADADA;">
+         <children>
+            <Label layoutX="17.0" layoutY="13.0" text="6 PM" textFill="#948d8d">
+               <font>
+                  <Font name="Agency FB Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Separator layoutX="368.0" layoutY="515.0" prefHeight="3.0" prefWidth="280.0" />
+      <Button layoutX="361.0" layoutY="536.0" mnemonicParsing="false" onAction="#Cancel" prefHeight="43.0" prefWidth="128.0" style="-fx-background-radius: 5em; -fx-border-radius: 5em; -fx-border-color: #996b99;" styleClass="land_btn" stylesheets="@../resources/css/common.css" text="Cancel" />
+      <Button layoutX="529.0" layoutY="536.0" mnemonicParsing="false" onAction="#reschedule_action" prefHeight="43.0" prefWidth="141.0" style="-fx-border-radius: 5em; -fx-background-radius: 5em; -fx-background-color: #996b99;" styleClass="land_btn" stylesheets="@../resources/css/common.css" text="Reschedule" />
+      <TextField fx:id="appointee_phone_number" layoutX="360.0" layoutY="96.0" prefHeight="25.0" prefWidth="189.0" />
+      <Label layoutX="360.0" layoutY="73.0" text="Who is this appointment set for:">
+         <font>
+            <Font name="Agency FB Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="558.0" layoutY="101.0" style="-fx-background-color: transparent;" text="* Enter phone number" textFill="#f50909">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

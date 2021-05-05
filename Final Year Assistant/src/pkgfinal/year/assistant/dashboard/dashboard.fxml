@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: transparent;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="pkgfinal.year.assistant.dashboard.DashboardController">
+   <children>
+      <VBox layoutX="92.0" layoutY="71.0" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox maxHeight="-Infinity" prefHeight="100.0" style="-fx-background-color: #3e3e3e;">
+               <children>
+                  <HBox prefWidth="200.0" style="-fx-border-color: white; -fx-border-width: 0px 2px 0px 2px;">
+                     <children>
+                        <Text fill="#fcf6f6" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white; -fx-font-size: 2em;" text="Student _Name" textAlignment="CENTER">
+                           <HBox.margin>
+                              <Insets top="30.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <Text fill="#fcf0f0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 2.5em; -fx-fill: white; -fx-font-family: algerian;" text="Dashboard" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets left="30.0" top="30.0" />
+                     </HBox.margin>
+                  </Text>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <ImageView fitHeight="32.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@../resources/png/glyphicons_122_message_in.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="TOP_LEFT" style="-fx-border-radius: 20px; -fx-text-alignment: center; -fx-text-fill: red;" text="8" textAlignment="CENTER" textFill="#fffafa">
+                           <HBox.margin>
+                              <Insets bottom="35.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ImageView fitHeight="32.0" fitWidth="29.0" layoutX="576.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets left="15.0" right="10.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@../resources/png/glyphicons_053_alarm.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="599.0" prefWidth="1000.0">
+               <children>
+                  <VBox prefWidth="205.0" style="-fx-background-color: #3e3e3e;" />
+               </children>
+               <VBox.margin>
+                  <Insets top="1.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

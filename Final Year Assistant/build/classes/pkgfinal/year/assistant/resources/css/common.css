@@ -1,0 +1,62 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 13, 2021, 5:31:41 AM
+    Author     : Nelly
+*/
+
+
+.parent{
+    -fx-background-color: transparent;
+}
+
+.pane{
+    -fx-background-color: #8c4f8c;
+}
+.land_btn{
+    -fx-background-color: transparent;
+    -fx-background-radius: 5px;
+    -fx-border-color: #30302c;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+    -fx-text-fill: #0f0f0e;
+        
+}
+
+
+.trans_btn{
+    -fx-background-color: transparent;
+    -fx-background-radius: 5px;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+    -fx-text-fill: whitesmoke;
+        
+}
+
+.some_button{
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+}
+.some_button:hover{
+    -fx-border-color: #4a6ef0;
+    -fx-border-width: 2px;
+}
+.signin_vbox{
+    -fx-background-color: #8c4f8c; 
+}
+
+.entries_students{
+    -fx-background-color: transparent;
+}
+
+.tf_email{
+    -fx-background-color: transparent;
+}
+
+.stdnt_password{
+    -fx-background-color: transparent;
+}
