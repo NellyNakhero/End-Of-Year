@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" fx:id="rootpane" prefHeight="565.0" prefWidth="803.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="pkgfinal.year.assistant.listsupervisors.SupervisorsListController">
+   <children>
+      <AnchorPane id="AnchorPane" fx:id="rootpane" prefHeight="500.0" prefWidth="794.0" styleClass="mainFxmlClass">
+         <stylesheets>
+            <URL value="@../../../../../../../Documents/NetBeansProjects/Hotel%20Booking%20Assistent/src/booking/assistant/ui/ListRooms/listrooms.css" />
+         </stylesheets>
+         <children>
+            <TableView fx:id="tableView" prefHeight="500.0" prefWidth="615.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <columns>
+                  <TableColumn fx:id="supervisors_ID_col" prefWidth="75.0" text="Supervisors_ID" />
+                  <TableColumn fx:id="Supervisors_Name_col" prefWidth="75.0" text="Supervisors_Name" />
+                  <TableColumn fx:id="Supervisors_Email_col" prefWidth="75.0" text="Supervisors_Email" />
+                  <TableColumn fx:id="Supervisors_Telephone_col" prefWidth="75.0" text="Supervisors_Telephone" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+               <contextMenu>
+                  <ContextMenu>
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleStudentDeletionOption" text="Delete" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleStudentEditOption" text="Edit" />
+                     </items>
+                  </ContextMenu>
+               </contextMenu>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
