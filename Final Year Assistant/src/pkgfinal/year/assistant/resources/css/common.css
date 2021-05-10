@@ -26,8 +26,22 @@ and open the template in the editor.
         
 }
 
+.basics_border{
+    -fx-text-fill: #2262C6;
+    -fx-background-color: #996b99;
+    -fx-background-radius: 50px;
+}
 
 .trans_btn{
+    -fx-background-color: transparent;
+    -fx-background-radius: 10px;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+    -fx-text-fill: whitesmoke;
+        
+}
+.storage_btn{
     -fx-background-color: transparent;
     -fx-background-radius: 5px;
     -fx-border-color: #cccccc;

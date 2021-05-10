@@ -23,6 +23,10 @@ import org.apache.logging.log4j.Logger;
 public class DatabaseHandler {
     
     private final static Logger LOGGER = LogManager.getLogger(DatabaseHandler.class.getName());
+    public static String student_reg_number_glbl="PXXX/XXXX/XX";
+    public static String student_mobile_number_glbl="+2547XXXXXXXXX";
+    public static String supervisor_staff_id_glbl="PXXX/XXXX/XX";
+    
     
 //...............................................................................................................................................
     private static DatabaseHandler handler = null;
@@ -37,6 +41,7 @@ public class DatabaseHandler {
         setUpSupervisorTable();
         setUpIssueTable();
         setUpAppointmentTable();
+        setUpStudentResoucesTable();
     }
 //...............................................................................................  
     public static DatabaseHandler getInstance(){
@@ -171,6 +176,37 @@ public class DatabaseHandler {
             java.util.logging.Logger.getLogger(DatabaseHandler.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+//................................................................................................................
+    void setUpStudentResoucesTable(){
+        String  TABLE_NAME = "STUDENTRESOURCES";
+         try {
+            
+            stmt= (Statement) conn.createStatement();
+            
+            DatabaseMetaData dbm = conn.getMetaData();
+           
+           ResultSet tables = dbm.getTables(null, null, TABLE_NAME.toUpperCase(),null);
+           
+           if(tables.next()){
+               System.out.println("Table "+ TABLE_NAME+" for chats, images and docs for student already exists. Ready to go!");
+           }
+           else{
+               stmt.execute("CREATE TABLE "+ TABLE_NAME + "("
+               +"Reg_num varchar(200) primary key, \n"
+               + "ID_number_s varchar(200), \n"
+               + "Project_Summary varchar (500), \n"
+               + "Project_Objectives varchar (500), \n"
+               + "Project_Budget varchar (500), \n"
+               + "Project_ToDo varchar (500), \n"
+               +"FOREIGN KEY (Reg_num) REFERENCES STUDENTS(reg_num), \n"
+               +"FOREIGN KEY (ID_number_s) REFERENCES SUPERVISORS(id_number_s)"
+               +")");
+           }
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(DatabaseHandler.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
 //................................................................................................  
     public ResultSet execQuery(String query) {
         ResultSet result;
