@@ -197,7 +197,10 @@ public class DatabaseHandler {
                + "Project_Summary varchar (500), \n"
                + "Project_Objectives varchar (500), \n"
                + "Project_Budget varchar (500), \n"
-               + "Project_ToDo varchar (500), \n"
+               + "Project_Title varchar (500), \n"
+               + "Username varchar (200), \n"
+               + "Student_email varchar (200), \n"
+               + "Student_mobile varchar (200), \n"
                +"FOREIGN KEY (Reg_num) REFERENCES STUDENTS(reg_num), \n"
                +"FOREIGN KEY (ID_number_s) REFERENCES SUPERVISORS(id_number_s)"
                +")");
@@ -215,7 +218,7 @@ public class DatabaseHandler {
             result = stmt.executeQuery(query);
         }
         catch (SQLException ex) {
-            System.out.println("Exception at execQuery:dataHandler" + ex.getLocalizedMessage());
+            System.out.println("Exception at execQuery:dataHandler " + ex.getLocalizedMessage());
             return null;
         }
         finally {

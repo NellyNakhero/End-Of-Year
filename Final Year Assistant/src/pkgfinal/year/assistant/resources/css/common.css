@@ -74,3 +74,7 @@ and open the template in the editor.
 .stdnt_password{
     -fx-background-color: transparent;
 }
+.text{
+    color: black;
+    -fx-text-fill: black;
+}

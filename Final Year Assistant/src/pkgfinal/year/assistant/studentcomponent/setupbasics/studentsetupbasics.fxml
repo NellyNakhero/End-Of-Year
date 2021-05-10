@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
@@ -7,20 +8,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="587.0" prefWidth="600.0" styleClass="basics_border" stylesheets="@../../resources/css/common.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="pkgfinal.year.assistant.studentcomponent.setupbasics.StudentsetupbasicsController">
+<AnchorPane id="AnchorPane" fx:id="rootpane" prefHeight="587.0" prefWidth="600.0" styleClass="basics_border" stylesheets="@../../resources/css/common.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkgfinal.year.assistant.studentcomponent.setupbasics.StudentsetupbasicsController">
    <children>
       <Label layoutX="139.0" layoutY="14.0" prefHeight="90.0" prefWidth="305.0" text="ADDITIONAL INFORMATION" textFill="#2262c6">
          <font>
             <Font name="Algerian" size="24.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="85.0" prefHeight="39.0" prefWidth="111.0" text="First Name:" textAlignment="CENTER" textFill="WHITE">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="85.0" prefHeight="39.0" prefWidth="111.0" text="Username :" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Cambria Bold" size="16.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="116.0" prefHeight="39.0" prefWidth="111.0" text="Last Name:" textAlignment="CENTER" textFill="WHITE">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="116.0" prefHeight="39.0" prefWidth="122.0" text="Supervisor_ID :" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Cambria Bold" size="16.0" />
          </font>
@@ -77,7 +77,15 @@
       <TextField fx:id="bsc_student_email" layoutX="202.0" layoutY="191.0" prefHeight="27.0" prefWidth="200.0" styleClass="trans_btn" stylesheets="@../../resources/css/common.css" />
       <TextField fx:id="bsc_student_projectitle" layoutX="203.0" layoutY="259.0" prefHeight="27.0" prefWidth="200.0" styleClass="trans_btn" stylesheets="@../../resources/css/common.css" />
       <TextField fx:id="bsc_student_projectbudget" layoutX="207.0" layoutY="507.0" prefHeight="27.0" prefWidth="200.0" styleClass="trans_btn" stylesheets="@../../resources/css/common.css" />
-      <TextArea fx:id="bsc_student_projectsummary" layoutX="203.0" layoutY="302.0" prefHeight="90.0" prefWidth="200.0" styleClass="trans_btn" stylesheets="@../../resources/css/common.css" />
-      <TextArea fx:id="bsc_student_projectobjectives" layoutX="205.0" layoutY="404.0" prefHeight="90.0" prefWidth="200.0" styleClass="trans_btn" stylesheets="@../../resources/css/common.css" />
+      <TextArea fx:id="bsc_student_projectsummary" layoutX="203.0" layoutY="302.0" prefHeight="90.0" prefWidth="200.0" promptText="Enter Your Project Summary" style="-fx-background-color: transparent;" stylesheets="@../../resources/css/common.css">
+         <styleClass>
+            <String fx:value="trans_btn" />
+            <String fx:value="text" />
+         </styleClass></TextArea>
+      <TextArea fx:id="bsc_student_projectobjectives" layoutX="205.0" layoutY="404.0" prefHeight="90.0" prefWidth="200.0" promptText="Enter Your Project Objectives" stylesheets="@../../resources/css/common.css">
+         <styleClass>
+            <String fx:value="trans_btn" />
+            <String fx:value="text" />
+         </styleClass></TextArea>
    </children>
 </AnchorPane>
