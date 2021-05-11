@@ -1,5 +1,6 @@
-package pkgfinal.year.assistant.meetingappointmentorg;
+package pkgfinal.year.assistant.studentcomponent.setupbasics;
 
+import pkgfinal.year.assistant.googledrive.*;
 import pkgfinal.year.assistant.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -11,11 +12,11 @@ import javafx.stage.Stage;
  *
  * @author Nelly
  */
-public class appointmentjava extends Application {
+public class setupbasics extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("appointment.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("studentsetupbasics.fxml"));
         
         Scene scene = new Scene(root);
         

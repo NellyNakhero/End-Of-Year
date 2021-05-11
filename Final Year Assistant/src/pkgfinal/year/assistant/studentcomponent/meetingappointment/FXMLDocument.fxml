@@ -225,7 +225,7 @@
       </Pane>
       <Separator layoutX="368.0" layoutY="515.0" prefHeight="3.0" prefWidth="280.0" />
       <Button layoutX="361.0" layoutY="536.0" mnemonicParsing="false" onAction="#Cancel" prefHeight="43.0" prefWidth="128.0" style="-fx-background-radius: 5em; -fx-border-radius: 5em; -fx-border-color: #996b99;" styleClass="land_btn" stylesheets="@../resources/css/common.css" text="Cancel" />
-      <Button layoutX="529.0" layoutY="536.0" mnemonicParsing="false" onAction="#reschedule_action" prefHeight="43.0" prefWidth="141.0" style="-fx-border-radius: 5em; -fx-background-radius: 5em; -fx-background-color: #996b99;" styleClass="land_btn" stylesheets="@../resources/css/common.css" text="Reschedule" />
+      <Button layoutX="529.0" layoutY="536.0" mnemonicParsing="false" onAction="#reschedule_action" onMouseClicked="#reschedule_mouse_click" prefHeight="43.0" prefWidth="141.0" style="-fx-border-radius: 5em; -fx-background-radius: 5em; -fx-background-color: #996b99;" styleClass="land_btn" stylesheets="@../resources/css/common.css" text="Reschedule" />
       <TextField fx:id="appointee_phone_number" layoutX="360.0" layoutY="96.0" prefHeight="25.0" prefWidth="189.0" />
       <Label layoutX="360.0" layoutY="73.0" text="Who is this appointment set for:">
          <font>
