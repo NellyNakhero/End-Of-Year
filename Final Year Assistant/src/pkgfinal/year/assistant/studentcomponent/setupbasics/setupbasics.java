@@ -1,5 +1,6 @@
 package pkgfinal.year.assistant.studentcomponent.setupbasics;
 
+import pkgfinal.year.assistant.studentcomponent.dashboard.*;
 import pkgfinal.year.assistant.googledrive.*;
 import pkgfinal.year.assistant.*;
 import javafx.application.Application;
