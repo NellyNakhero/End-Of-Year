@@ -21,6 +21,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 import pkgfinal.year.assistant.database.DatabaseHandler;
+import pkgfinal.year.assistant.liststudents.StudentlistController;
 
 /**
  * FXML Controller class
@@ -49,6 +50,7 @@ public class AddstudentController implements Initializable {
     private Label label_student_details;
     
     DatabaseHandler databaseHandler;
+    private boolean isInEditMode= Boolean.FALSE;
     
     @FXML
     private AnchorPane rootpane;
@@ -79,7 +81,11 @@ public class AddstudentController implements Initializable {
  if(regNum.isEmpty()||nameStdnt.isEmpty()||projectTitle.isEmpty()||emailStdnt.isEmpty()||mobileStdnt.isEmpty()){
 JOptionPane.showMessageDialog(null, "Please Enter All Fields","Error Occurred",JOptionPane.ERROR_MESSAGE);
  }
-
+    
+        if (isInEditMode){
+          handleEditOperation();
+          return;
+      }
   String qu= "INSERT INTO STUDENTS VALUES(" +
                 "'"+ regNum +"'," +
                 "'"+ nameStdnt +"'," +
@@ -110,4 +116,27 @@ JOptionPane.showMessageDialog(null, "Please Enter All Fields","Error Occurred",J
             Logger.getLogger(AddstudentController.class.getName()).log(Level.SEVERE, null, ex);
         } 
     }
+
+    //.............................................................................................................
+      public void inflateUI(StudentlistController.Student student){
+          reg_num.setText(student.getStdnt_regnum());
+          name_stdnt.setText(student.getStudent_name());
+          project_title.setText(student.getProject_title());
+          email_stdnt.setText(student.getStdnt_email());
+          mobile_stdnt.setText(student.getStdnt_tel());
+          reg_num.setEditable(false);
+          isInEditMode= Boolean.TRUE;
+      }
+
+    private void handleEditOperation() {
+      StudentlistController.Student student = new StudentlistController.Student(name_stdnt.getText(), reg_num.getText(), project_title.getText(), email_stdnt.getText(), mobile_stdnt.getText(), true);
+     if (databaseHandler.updatingStudent(student)){
+         JOptionPane.showMessageDialog(null, "student is Updated Successfully","Success", JOptionPane.INFORMATION_MESSAGE);
+     }
+     else{
+         JOptionPane.showMessageDialog(null, "Operation Update student unsuccessful","Operation Failed",JOptionPane.ERROR_MESSAGE);
+     }
+    }
+
+    
 }

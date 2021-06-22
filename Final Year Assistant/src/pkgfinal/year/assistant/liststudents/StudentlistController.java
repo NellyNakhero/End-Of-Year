@@ -151,36 +151,35 @@ public class StudentlistController implements Initializable {
 
     @FXML
     private void handleStudentDeletionOption(ActionEvent event) {
-//         Student student_to_be_deleted = tableView.getSelectionModel().getSelectedItem();
-//        if(student_to_be_deleted == null){
-//            JOptionPane.showMessageDialog(null, "Please select the student details that you want deleted first", "No Student Deleted", JOptionPane.QUESTION_MESSAGE);
-//            return;
-//        }
-//        
-//       int choice=JOptionPane.showConfirmDialog(null, "Are you sure you want to delete student details  " +student_to_be_deleted.getStudent_name() + " of registration number "+ student_to_be_deleted.getStdnt_regnum()
-//               ,"Confirm Issue Operation", JOptionPane.INFORMATION_MESSAGE);
-//       if(choice==JOptionPane.YES_OPTION){
-// //          Boolean confm= DatabaseHandler.getInstance().isRoomAlreadyIssued(student_to_be_deleted);
-//           if(confm){
-//                   JOptionPane.showMessageDialog(null, " The student is already issued and cannot be deleted","Cannot Delete Already assigned student",JOptionPane.ERROR_MESSAGE);
-//           }
-// //          Boolean result = DatabaseHandler.getInstance().deleteRoom(student_to_be_deleted);
-//           if(result){
-//               JOptionPane.showMessageDialog(null, "Student "+student_to_be_deleted.getStudent_name()+ "Successfully deleted from Supervison Database");
-//           list.remove(student_to_be_deleted);
-//           }
-//           else{
-//               JOptionPane.showMessageDialog(null, "Student "+student_to_be_deleted.getStudent_name()+" Deletion was unsuccessfull!!!", "Error Occurred",JOptionPane.ERROR_MESSAGE);
-//           }
-//           
-//       } else{
-//          JOptionPane.showMessageDialog(null, "Delete Operation Cancelled!","Cancel Delete Operation",JOptionPane.PLAIN_MESSAGE);
-//       }
+         Student student_to_be_deleted = tableView.getSelectionModel().getSelectedItem();
+        if(student_to_be_deleted == null){
+            JOptionPane.showMessageDialog(null, "Please select the student details that you want deleted first", "No Student Deleted", JOptionPane.QUESTION_MESSAGE);
+            return;
+        }
+        
+       int choice=JOptionPane.showConfirmDialog(null, "Are you sure you want to delete student details  " +student_to_be_deleted.getStudent_name() + " of registration number "+ student_to_be_deleted.getStdnt_regnum()
+               ,"Confirm Issue Operation", JOptionPane.INFORMATION_MESSAGE);
+       if(choice==JOptionPane.YES_OPTION){
+          Boolean confm= DatabaseHandler.getInstance().isStudentAlreadyIssued(student_to_be_deleted);
+           if(confm){
+                   JOptionPane.showMessageDialog(null, " The student is already issued and cannot be deleted","Cannot Delete Already assigned student",JOptionPane.ERROR_MESSAGE);
+           }
+          Boolean result = DatabaseHandler.getInstance().deleteStudent(student_to_be_deleted);
+           if(result){
+               JOptionPane.showMessageDialog(null, "Student "+student_to_be_deleted.getStudent_name()+ "Successfully deleted from Supervison Database");
+           list.remove(student_to_be_deleted);
+           }
+           else{
+               JOptionPane.showMessageDialog(null, "Student "+student_to_be_deleted.getStudent_name()+" Deletion was unsuccessfull!!!", "Error Occurred",JOptionPane.ERROR_MESSAGE);
+           }
+           
+       } else{
+          JOptionPane.showMessageDialog(null, "Delete Operation Cancelled!","Cancel Delete Operation",JOptionPane.PLAIN_MESSAGE);
+       }
     }
 
     @FXML
     private void handleStudentEditOption(ActionEvent event) {
-        
          Student student_to_be_edited = tableView.getSelectionModel().getSelectedItem();
         if(student_to_be_edited == null){
             JOptionPane.showMessageDialog(null, "Please select the student entry that you want Edited first", "No Student Entry Deleted", JOptionPane.QUESTION_MESSAGE);
@@ -192,8 +191,8 @@ public class StudentlistController implements Initializable {
               FXMLLoader loader= new FXMLLoader(getClass().getResource("/pkgfinal/year/assistant/addstudent/addstudent.fxml"));
                Parent parent = loader.load();
                //inflating the loaded scene
-               AddstudentController add_student_controller= (AddstudentController)loader.getController();
-  //             student_to_be_edited.inflateUI(student_to_be_edited);
+               AddstudentController add_student_controller = (AddstudentController)loader.getController();
+               add_student_controller.inflateUI(student_to_be_edited);
                
                Stage stage = new Stage(StageStyle.DECORATED);
                stage.setTitle("Edit Student Entry Information");

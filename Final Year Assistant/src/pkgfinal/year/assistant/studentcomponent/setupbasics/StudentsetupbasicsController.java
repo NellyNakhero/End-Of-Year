@@ -88,7 +88,7 @@ public class StudentsetupbasicsController implements Initializable {
         }
         
        // String sm = spvisorr_id;
-        String str= "INSERT INTO STUDENTRESOURCES VALUES(" +
+        String str= "INSERT INTO STUDENTRESOURCESTABLE VALUES(" +
                 "'"+ student_regnum +"'," +
                 "'"+ supervisor_ID +"'," +
                 "'"+ student_projectsummary +"'," +
@@ -96,8 +96,7 @@ public class StudentsetupbasicsController implements Initializable {
                 "'"+ student_projectbudget +"'," +
                 "'"+ student_projectitle +"'," +
                 "'"+ student_username +"'," +
-                "'"+ student_email +"'," +
-                //"'"+ student_mobile +"'"  
+                "'"+ student_email +"'," +  
                 "'"+ student_mobile + "')";
                 
         System.out.println(str);

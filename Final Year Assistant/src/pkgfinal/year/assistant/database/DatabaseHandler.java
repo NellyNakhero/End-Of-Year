@@ -8,6 +8,7 @@ package pkgfinal.year.assistant.database;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -15,6 +16,8 @@ import java.util.logging.Level;
 import javax.swing.JOptionPane;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import pkgfinal.year.assistant.liststudents.StudentlistController.Student;
+import pkgfinal.year.assistant.listsupervisors.SupervisorsListController.Supervisor;
 
 /**
  *
@@ -42,6 +45,7 @@ public class DatabaseHandler {
         setUpIssueTable();
         setUpAppointmentTable();
         setUpStudentResoucesTable();
+        setUpMessagesTable();
     }
 //...............................................................................................  
     public static DatabaseHandler getInstance(){
@@ -92,7 +96,21 @@ public class DatabaseHandler {
         }
     }
 
-     
+      public boolean deleteStudent(Student student){
+        try {
+            String student_delete_stmt = "DELETE FROM STUDENTS WHERE reg_num = ?";
+            PreparedStatement stmt= conn.prepareStatement(student_delete_stmt);
+            stmt.setString(1, student.getStdnt_regnum());
+            int res = stmt.executeUpdate();
+            System.out.println(res);
+            return true;
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(DatabaseHandler.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+    }
+  
+  
  //...........................................................................................................//
   void setUpSupervisorTable(){ 
        String  TABLE_NAME = "SUPERVISORS";
@@ -120,9 +138,24 @@ public class DatabaseHandler {
         } finally {       
         }
     } 
+  //..............................................................................................................
+    public boolean deleteSupervisorFromTable(Supervisor supervisor){
+        try {
+            String supervisor_delete_stmt = "DELETE FROM SUPERVISORS WHERE id_number_s = ?";
+            PreparedStatement stmt= conn.prepareStatement(supervisor_delete_stmt);
+            stmt.setString(1, supervisor.getSupervisorID_nmbr());
+            int res = stmt.executeUpdate();
+            System.out.println(res);
+            return true;
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(DatabaseHandler.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+    }
+
 //...............................................................................................................
     void setUpAppointmentTable(){
-        String  TABLE_NAME = "APPOINTMENT";
+        String  TABLE_NAME = "APPOINTMENTSS";
          try {
             
             stmt= (Statement) conn.createStatement();
@@ -136,11 +169,11 @@ public class DatabaseHandler {
            }
            else{
                stmt.execute("CREATE TABLE "+ TABLE_NAME + "("
-               +"supervisor_w_appointment_mobile varchar(200) primary key, \n"
-               + "AppointmentDate varchar(200), \n"
-               + "AppointmentTime varchar(200), \n"
-               + "AppointmentHours varchar(200), \n"
-               + "AppointmentMins varchar(200), \n"
+               +"supervisor_w_appointment_mobile varchar(200) default '0700000000' primary key, \n"
+               + "AppointmentDate varchar(200)  default '02/02/2022', \n"
+               + "AppointmentTime varchar(200) default '8 PM', \n"
+               + "AppointmentHours varchar(200) default '2 HRS', \n"
+               + "AppointmentMins varchar(200) default '30 MINS', \n"
                + "reset_count integer default 0 \n"
                +")");
            }
@@ -178,7 +211,7 @@ public class DatabaseHandler {
     }
 //................................................................................................................
     void setUpStudentResoucesTable(){
-        String  TABLE_NAME = "STUDENTRESOURCES";
+        String  TABLE_NAME = "STUDENTRESOURCESTABLE";
          try {
             
             stmt= (Statement) conn.createStatement();
@@ -192,17 +225,17 @@ public class DatabaseHandler {
            }
            else{
                stmt.execute("CREATE TABLE "+ TABLE_NAME + "("
-               +"Reg_num varchar(200) primary key, \n"
-               + "ID_number_s varchar(200), \n"
-               + "Project_Summary varchar (500), \n"
-               + "Project_Objectives varchar (500), \n"
-               + "Project_Budget varchar (500), \n"
-               + "Project_Title varchar (500), \n"
-               + "Username varchar (200), \n"
-               + "Student_email varchar (200), \n"
-               + "Student_mobile varchar (200), \n"
-               +"FOREIGN KEY (Reg_num) REFERENCES STUDENTS(reg_num), \n"
-               +"FOREIGN KEY (ID_number_s) REFERENCES SUPERVISORS(id_number_s)"
+               + " Reg_num varchar(200) primary key, \n"
+               + " ID_number_s varchar(200), \n"
+               + " Project_Summary varchar (500), \n"
+               + " Project_Objectives varchar (500), \n"
+               + " Project_Budget varchar (500), \n"
+               + " Project_Title varchar (500), \n"
+               + " Username varchar (200), \n"
+               + " Student_email varchar (200), \n"
+               + " Student_mobile varchar (200), \n"
+               + " FOREIGN KEY (Reg_num) REFERENCES STUDENTS(reg_num), \n"
+               + " FOREIGN KEY (ID_number_s) REFERENCES SUPERVISORS(id_number_s)"
                +")");
            }
         } catch (SQLException ex) {
@@ -210,6 +243,34 @@ public class DatabaseHandler {
         }
     }
 
+     void setUpMessagesTable(){ 
+       String  TABLE_NAME = "MESSAGESS";
+        try {
+            
+            stmt= (Statement) conn.createStatement();
+            
+           DatabaseMetaData dbm = conn.getMetaData();
+           
+           ResultSet tables = dbm.getTables(null, null, TABLE_NAME.toUpperCase(),null);
+           
+           if(tables.next()){
+               System.out.println("Table "+ TABLE_NAME+" for MESSAGES already exists. Ready to go!");
+           }
+           else{
+               stmt.execute("CREATE TABLE "+ TABLE_NAME + "("
+               + " renew_count integer default 0 primary key, \n"
+               + " From_contacts varchar(200), \n"
+               + " Message varchar(200), \n"
+               + " To_contacts varchar(200)"
+               +")");
+           }
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage()+"............set up database");
+        } finally {       
+        }
+    }
+
+    
 //................................................................................................  
     public ResultSet execQuery(String query) {
         ResultSet result;
@@ -240,5 +301,50 @@ public class DatabaseHandler {
         finally {
         }
     }
-    
+ //..........................................................................................................
+     public boolean isStudentAlreadyIssued(Student student){
+        try {
+            String check_student_stmt = "SELECT COUNT(*) FROM ISSUE WHERE Reg_num = ?";
+            PreparedStatement stmt= conn.prepareStatement(check_student_stmt);
+            stmt.setString(1, student.getStdnt_regnum());
+            ResultSet rs =stmt.executeQuery();
+            if(rs.next()){
+                int count = rs.getInt(1);
+                System.out.println(count);
+                if(count > 0){
+                    
+                    return true;
+                }
+                else{
+                
+                    return false;
+                }
+            }
+            
+            return true;
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(DatabaseHandler.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+    }
+   //..............................................................................................................
+     public boolean updatingStudent(Student student){
+        try {
+            String update = "UPDATE STUDENTS SET reg_num=?,name_stdnt=?, project_title=?, email_stdnt=?, mobile_stdnt=? WHERE reg_num=?";
+            PreparedStatement stmt= conn.prepareStatement(update);
+            
+            stmt.setString(1, student.getStdnt_regnum());
+            stmt.setString(2, student.getStudent_name());
+            stmt.setString(3, student.getProject_title());
+            stmt.setString(4, student.getStdnt_email());
+            stmt.setString(5, student.getStdnt_tel());
+            int res = stmt.executeUpdate();
+            
+            return (res>0);
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(DatabaseHandler.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       return false;  
+     }
+
 }

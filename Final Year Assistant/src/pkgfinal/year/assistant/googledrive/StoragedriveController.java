@@ -6,6 +6,7 @@
 package pkgfinal.year.assistant.googledrive;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,7 +14,10 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -21,8 +25,11 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javax.swing.JOptionPane;
 import pkgfinal.year.assistant.database.DatabaseHandler;
+import pkgfinal.year.assistant.studentcomponent.ChatApp.ChatAppController;
 
 /**
  * FXML Controller class
@@ -79,7 +86,7 @@ public class StoragedriveController implements Initializable {
             listview_files.getItems().add(selected_file.getName());
         }else{
             
-          JOptionPane.showMessageDialog(null, " -------Error Uploading The File --------" , "SUCCESSFUL", JOptionPane.ERROR_MESSAGE);
+          JOptionPane.showMessageDialog(null, " -------Cancelled Uploading The File --------" , "Error", JOptionPane.ERROR_MESSAGE);
        
         }
        
@@ -87,22 +94,57 @@ public class StoragedriveController implements Initializable {
 
     @FXML
     private void box_my_drive_clicked(MouseEvent event) {
+         
+        FileChooser fc= new FileChooser();
+        File selected_file = fc.showOpenDialog(null);
+        
+        if(selected_file != null){
+            listview_files.getItems().add(selected_file.getName());
+        }else{
+            
+          JOptionPane.showMessageDialog(null, " -------Cancelled Uploading The File --------" , "Error", JOptionPane.ERROR_MESSAGE);
+       
+        }
     }
 
     @FXML
     private void box_computer_clicked(MouseEvent event) {
+            FileChooser fc= new FileChooser();
+        File selected_file = fc.showOpenDialog(null);
+        
+        if(selected_file != null){
+            listview_files.getItems().add(selected_file.getName());
+        }else{
+            
+          JOptionPane.showMessageDialog(null, " -------Cancelled Uploading The File --------" , "Error", JOptionPane.ERROR_MESSAGE);
+       
+        }
     }
 
     @FXML
     private void box_shared_w_me_clicked(MouseEvent event) {
+            FileChooser fc= new FileChooser();
+        File selected_file = fc.showOpenDialog(null);
+        
+        if(selected_file != null){
+            listview_files.getItems().add(selected_file.getName());
+        }else{
+            
+          JOptionPane.showMessageDialog(null, " -------Cancelled Uploading The File --------" , "Error", JOptionPane.ERROR_MESSAGE);
+       
+        }
     }
 
     @FXML
     private void box_contributors_clicked(MouseEvent event) {
+     
+     JOptionPane.showMessageDialog(null, " No Contributors Set Yet--------" , "Contributors Settings", JOptionPane.INFORMATION_MESSAGE);
+       
     }
 
     @FXML
     private void box_notifications_clicked(MouseEvent event) {
+        loadWindow("/pkgfinal/year/assistant/studentcomponent/listappointments/listAppointments.fxml", "Notifications View");
     }
 
     @FXML
@@ -119,18 +161,19 @@ public class StoragedriveController implements Initializable {
                 + "\n .","Confirm Operation", JOptionPane.INFORMATION_MESSAGE);
         
         if(choice==JOptionPane.YES_OPTION){
-            String qu = "SELECT Project_Summary FROM STUDENTRESOURCES";
-            ResultSet rs = handler.execQuery(qu);
-            try {
-               while (rs.next()) {
-                String prj_summary = rs.getString("Project_Summary");
-                System.out.println(prj_summary);
-                JOptionPane.showMessageDialog(null,"PROJECT SUMMARY:- \n"+ prj_summary , "You Already Set Your Project Summary", JOptionPane.INFORMATION_MESSAGE);
-            
-               }
-        }   catch (SQLException ex) {
-                Logger.getLogger(StoragedriveController.class.getName()).log(Level.SEVERE, null, ex);
-            }
+         loadWindow("/pkgfinal/year/assistant/studentcomponent/summary/project_summary.fxml", "Calender View");
+//            String qu = "SELECT Project_Summary FROM STUDENTRESOURCES";
+//            ResultSet rs = handler.execQuery(qu);
+//            try {
+//               while (rs.next()) {
+//                String prj_summary = rs.getString("Project_Summary");
+//                System.out.println(prj_summary);
+//                JOptionPane.showMessageDialog(null,"PROJECT SUMMARY:- \n"+ prj_summary , "You Already Set Your Project Summary", JOptionPane.INFORMATION_MESSAGE);
+//            
+//               }
+//        }   catch (SQLException ex) {
+//                Logger.getLogger(StoragedriveController.class.getName()).log(Level.SEVERE, null, ex);
+//            }
        
             
         }
@@ -157,17 +200,32 @@ public class StoragedriveController implements Initializable {
            JOptionPane.showMessageDialog(null, "Issue Cancelled!" , "CANCELLED", JOptionPane.INFORMATION_MESSAGE);
         }
     }
+    void loadWindow(String loc,String title){   
+      try {
+               Parent parent = FXMLLoader.load(getClass().getResource(loc));
+               Stage stage = new Stage(StageStyle.DECORATED);
+               stage.setTitle(title);
+               stage.setScene(new Scene(parent));
+               stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(StoragedriveController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+       }
 
     @FXML
-    private void project_objectives_clicked(MouseEvent event) {
+    private void project_objectives_clicked(MouseEvent event) {  
+      loadWindow("/pkgfinal/year/assistant/studentcomponent/objectives/project_objectives.fxml", "PROJECT OBJECTIVES PAGE");
     }
 
     @FXML
     private void project_calender_clicked(MouseEvent event) {
+        loadWindow("/pkgfinal/year/assistant/studentcomponent/calendercomponent/toggle_calender.fxml", "Calender View");
     }
 
     @FXML
     private void project_budget_clicked(MouseEvent event) {
+        loadWindow("/pkgfinal/year/assistant/studentcomponent/budget/project_budget.fxml", "Calender View");
     }
 
     @FXML

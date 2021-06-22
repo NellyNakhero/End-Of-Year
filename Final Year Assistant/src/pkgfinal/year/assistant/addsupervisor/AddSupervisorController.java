@@ -21,7 +21,6 @@ import pkgfinal.year.assistant.database.DatabaseHandler;
  *
  * @author Nelly A.
  */
-
 public class AddSupervisorController implements Initializable {
 
     @FXML
@@ -42,13 +41,6 @@ public class AddSupervisorController implements Initializable {
     private AnchorPane rootpane;
     
     DatabaseHandler dbHandler;
-    
-    public final String spvisorr_id= id_number_s.getText();
-      
-    //call return pvrid
-    public String get_supervisor_ID(){
-        return spvisorr_id;
-    }
 
     /**
      * Initializes the controller class.
@@ -66,7 +58,7 @@ public class AddSupervisorController implements Initializable {
         stage.close();
     }
 
- //  String spvr_id= id_number_s.getText();
+   
     @FXML
     private void saveSupervisor(ActionEvent event) {
         

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="551.0" prefWidth="828.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkgfinal.year.assistant.supervisorcomponent.dashboard.DashboardController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutY="-1.0" prefHeight="568.0" prefWidth="815.0" style="-fx-background-color: transparent;">
+         <children>
+            <VBox layoutX="92.0" layoutY="71.0" prefHeight="550.0" prefWidth="815.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <HBox maxHeight="-Infinity" prefHeight="81.0" prefWidth="815.0" style="-fx-background-color: #3e3e3e;">
+                     <children>
+                        <HBox prefHeight="81.0" prefWidth="167.0" style="-fx-border-color: white; -fx-border-width: 0px 1px 0px 1px;">
+                           <children>
+                              <Text fill="#fcf6f6" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white; -fx-font-size: 2em;" text="Ms. Vancy Kebut" textAlignment="CENTER">
+                                 <HBox.margin>
+                                    <Insets top="30.0" />
+                                 </HBox.margin>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <Text fill="#fcf0f0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 2.5em; -fx-fill: white; -fx-font-family: algerian;" text="Dashboard" textAlignment="CENTER">
+                           <HBox.margin>
+                              <Insets left="30.0" top="30.0" />
+                           </HBox.margin>
+                        </Text>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="92.0" prefWidth="410.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <ImageView fitHeight="32.0" fitWidth="29.0" onMouseClicked="#messages_clicked" pickOnBounds="true" preserveRatio="true">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                                 <image>
+                                    <Image url="@../../resources/png/glyphicons_122_message_in.png" />
+                                 </image>
+                              </ImageView>
+                              <Label alignment="TOP_LEFT" style="-fx-border-radius: 20px; -fx-text-alignment: center; -fx-text-fill: red;" text="8" textAlignment="CENTER" textFill="#fffafa">
+                                 <HBox.margin>
+                                    <Insets bottom="35.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <ImageView fitHeight="32.0" fitWidth="29.0" layoutX="576.0" layoutY="44.0" onMouseClicked="#notifications_clicked" pickOnBounds="true" preserveRatio="true">
+                                 <HBox.margin>
+                                    <Insets left="15.0" right="10.0" />
+                                 </HBox.margin>
+                                 <image>
+                                    <Image url="@../../resources/png/glyphicons_053_alarm.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="465.0" prefWidth="815.0">
+                     <children>
+                        <VBox prefHeight="435.0" prefWidth="179.0" style="-fx-background-color: #3e3e3e;">
+                           <children>
+                              <Label contentDisplay="CENTER" onMouseClicked="#currently_Supervised_list_click" prefHeight="66.0" prefWidth="179.0" text="  Currently Supervised" textAlignment="CENTER" textFill="#eee7e7" underline="true">
+                                 <font>
+                                    <Font name="Elephant" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="10.0" onMouseClicked="#conversation_Clicked" prefHeight="66.0" prefWidth="179.0" text="  Conversations" textAlignment="CENTER" textFill="#eee7e7" underline="true">
+                                 <font>
+                                    <Font name="Elephant" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="76.0" onMouseClicked="#admin_clicked" prefHeight="66.0" prefWidth="179.0" text="Admin Priviledges" textAlignment="CENTER" textFill="#eee7e7" underline="true">
+                                 <font>
+                                    <Font name="Elephant" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="142.0" onMouseClicked="#appointments_click" prefHeight="66.0" prefWidth="179.0" text=" Appointments" textAlignment="CENTER" textFill="#eee7e7" underline="true">
+                                 <font>
+                                    <Font name="Elephant" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="208.0" onMouseClicked="#calender_clicked" prefHeight="66.0" prefWidth="179.0" text="  Calender" textAlignment="CENTER" textFill="#eee7e7" underline="true">
+                                 <font>
+                                    <Font name="Elephant" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="274.0" onMouseClicked="#settings_clicked" prefHeight="66.0" prefWidth="179.0" text="  Settings" textAlignment="CENTER" textFill="#eee7e7" underline="true">
+                                 <font>
+                                    <Font name="Elephant" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="340.0" onMouseClicked="#logout_clicked" prefHeight="66.0" prefWidth="179.0" text="  Logout" textAlignment="CENTER" textFill="#eee7e7" underline="true">
+                                 <font>
+                                    <Font name="Elephant" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="1.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+            <Label layoutX="14.0" layoutY="546.0" prefHeight="17.0" prefWidth="807.0" text="Fianl Year Assistant software is meant to easen the whole project management process for university finalsts . The project is the final year project of Nelly Nakhero. All copyrights are reserves">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

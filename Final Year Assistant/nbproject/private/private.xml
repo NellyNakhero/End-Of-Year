@@ -3,9 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/User/Desktop/Final%20Year%20Assistant/src/pkgfinal/year/assistant/meetingappointment/AppointmentController.java</file>
-            <file>file:/C:/Users/User/Desktop/Final%20Year%20Assistant/src/pkgfinal/year/assistant/addstudent/AddstudentController.java</file>
-            <file>file:/C:/Users/User/Desktop/Final%20Year%20Assistant/src/pkgfinal/year/assistant/database/DatabaseHandler.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/GIT%20PROJECTS/End-Of-Year/Final%20Year%20Assistant/src/pkgfinal/year/assistant/admin/mainwidow/MainController.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/GIT%20PROJECTS/End-Of-Year/Final%20Year%20Assistant/src/pkgfinal/year/assistant/studentcomponent/dashboard/StudentdashboardController.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/GIT%20PROJECTS/End-Of-Year/Final%20Year%20Assistant/src/pkgfinal/year/assistant/database/DatabaseHandler.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/GIT%20PROJECTS/End-Of-Year/Final%20Year%20Assistant/src/pkgfinal/year/assistant/studentcomponent/objectives/Project_objectivesController.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/GIT%20PROJECTS/End-Of-Year/Final%20Year%20Assistant/src/pkgfinal/year/assistant/studentcomponent/dashboard/Studentdashboard.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/GIT%20PROJECTS/End-Of-Year/Final%20Year%20Assistant/src/pkgfinal/year/assistant/studentcomponent/objectives/objectives.java</file>
         </group>
     </open-files>
 </project-private>

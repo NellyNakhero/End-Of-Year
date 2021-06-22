@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import pkgfinal.year.assistant.database.DatabaseHandler;
 
 /**
  *
@@ -22,6 +23,8 @@ public class Studentdashboard extends Application {
         
         stage.setScene(scene);
         stage.show();
+        
+        DatabaseHandler.getInstance();
     }
 
     /**

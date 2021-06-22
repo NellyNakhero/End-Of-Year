@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="rootpane" prefHeight="580.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkgfinal.year.assistant.studentcomponent.ChatApp.ChatAppController">
+   <children>
+      <Pane prefHeight="580.0" prefWidth="148.0" styleClass="side_bar" stylesheets="@chat_style_sheet.css">
+         <children>
+            <Circle fill="#eff4f8" layoutX="70.0" layoutY="69.0" radius="34.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <HBox layoutY="128.0" onMouseClicked="#profille_clicked" prefHeight="47.0" prefWidth="148.0">
+               <children>
+                  <ImageView fitHeight="31.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resources/incomplete/pngaaa.com-2341519.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="6.0" top="15.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label prefHeight="49.0" prefWidth="92.0" text="Profile" textAlignment="CENTER" textFill="#000000b9">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="3.0" />
+               </padding>
+            </HBox>
+            <HBox layoutY="192.0" onMouseClicked="#chat_clicked" prefHeight="47.0" prefWidth="148.0">
+               <children>
+                  <ImageView fitHeight="31.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resources/incomplete/unnamed%20(2).png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="6.0" top="15.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label prefHeight="49.0" prefWidth="92.0" text="Chat" textAlignment="CENTER" textFill="#000000b9">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="3.0" />
+               </padding>
+            </HBox>
+            <HBox layoutX="2.0" layoutY="267.0" onMouseClicked="#calender_clicked" prefHeight="47.0" prefWidth="148.0">
+               <children>
+                  <ImageView fitHeight="37.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resources/images/DateIcon.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="6.0" top="12.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label prefHeight="49.0" prefWidth="92.0" text="Calender" textAlignment="CENTER" textFill="#000000b9">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="3.0" />
+               </padding>
+            </HBox>
+            <HBox layoutX="2.0" layoutY="345.0" onMouseClicked="#drive_clicked" prefHeight="47.0" prefWidth="148.0">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resources/incomplete/PinClipart.com_cloud-blowing-wind-clip_1239324.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="6.0" top="15.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label prefHeight="49.0" prefWidth="92.0" text="Drive" textAlignment="CENTER" textFill="#000000b9">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="3.0" />
+               </padding>
+            </HBox>
+            <HBox layoutX="2.0" layoutY="418.0" onMouseClicked="#settings_clicked" prefHeight="47.0" prefWidth="148.0">
+               <children>
+                  <ImageView fitHeight="31.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resources/incomplete/settings-icon-14967.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="6.0" top="15.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label prefHeight="49.0" prefWidth="92.0" text="Settings" textAlignment="CENTER" textFill="#000000b9">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="3.0" />
+               </padding>
+            </HBox>
+            <HBox layoutX="2.0" layoutY="496.0" onMouseClicked="#logout_event" prefHeight="47.0" prefWidth="148.0">
+               <children>
+                  <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resources/incomplete/logout.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="6.0" top="15.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label prefHeight="49.0" prefWidth="92.0" text="Logout" textAlignment="CENTER" textFill="#000000b9">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="3.0" />
+               </padding>
+            </HBox>
+            <ImageView fitHeight="68.0" fitWidth="68.0" layoutX="36.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/incomplete/DcjP1abX4AEArLm__1_-removebg-preview.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="152.0" prefHeight="580.0" prefWidth="275.0" style="-fx-background-color: #ededed;">
+         <children>
+            <Label layoutX="38.0" layoutY="61.0" prefHeight="49.0" prefWidth="92.0" text="Chats" textAlignment="CENTER" textFill="#000000b9">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <HBox layoutX="14.0" layoutY="132.0" onMouseClicked="#loadCoordinatorMessages" prefHeight="66.0" prefWidth="236.0" style="-fx-border-color: grey; -fx-border-radius: 15px; -fx-border-width: 0.2px;">
+               <children>
+                  <ImageView fitHeight="66.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../../resources/incomplete/flat-business-man-user-profile-avatar-icon-vector-4333097-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+                  <VBox prefHeight="66.0" prefWidth="135.0">
+                     <children>
+                        <Label prefHeight="49.0" prefWidth="131.0" text="Project Coordinator" textAlignment="CENTER" textFill="#000000b9">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="33.0" prefWidth="174.0" text="ID : Cooinidator_P100" textAlignment="CENTER" textFill="#000000b9">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <Circle fill="#ff1f1f" radius="4.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+                     <HBox.margin>
+                        <Insets left="5.0" top="15.0" />
+                     </HBox.margin>
+                  </Circle>
+               </children>
+               <padding>
+                  <Insets left="3.0" />
+               </padding>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </HBox>
+            <HBox layoutX="14.0" layoutY="230.0" onMouseClicked="#loadSupervisorMessage" prefHeight="66.0" prefWidth="236.0" style="-fx-border-color: grey; -fx-border-radius: 15px; -fx-border-width: 0.2px;">
+               <children>
+                  <ImageView fitHeight="66.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../../resources/incomplete/female-avatar-profile-icon-round-woman-face-vector-18307315-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+                  <VBox prefHeight="66.0" prefWidth="135.0">
+                     <children>
+                        <Label prefHeight="49.0" prefWidth="131.0" text="Project Supervisor" textAlignment="CENTER" textFill="#000000b9">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="33.0" prefWidth="174.0" text="ID : Supervisor_Vancy" textAlignment="CENTER" textFill="#000000b9">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <Circle fill="#39d71d" radius="4.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+                     <HBox.margin>
+                        <Insets left="5.0" top="15.0" />
+                     </HBox.margin>
+                  </Circle>
+               </children>
+               <padding>
+                  <Insets left="3.0" />
+               </padding>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </HBox>
+            <HBox layoutX="14.0" layoutY="333.0" prefHeight="66.0" prefWidth="236.0" style="-fx-border-color: grey; -fx-border-radius: 15px; -fx-border-width: 0.2px;">
+               <children>
+                  <ImageView fitHeight="66.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../../resources/incomplete/flat-business-man-user-profile-avatar-icon-vector-4333097-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+                  <VBox prefHeight="66.0" prefWidth="135.0">
+                     <children>
+                        <Label prefHeight="49.0" prefWidth="131.0" text="Project Coordinator" textAlignment="CENTER" textFill="#000000b9">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="33.0" prefWidth="174.0" text=" . . . . . ." textAlignment="CENTER" textFill="#000000b9">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <Circle fill="#fffdfd" radius="4.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+                     <HBox.margin>
+                        <Insets left="5.0" top="15.0" />
+                     </HBox.margin>
+                  </Circle>
+               </children>
+               <padding>
+                  <Insets left="3.0" />
+               </padding>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </HBox>
+            <Label layoutX="-4.0" layoutY="509.0" prefHeight="79.0" prefWidth="275.0" text=" NOTE: Enter specified relevant ID as TO: &amp; your name as From:" textAlignment="CENTER" textFill="#000000b9">
+               <font>
+                  <Font name="System Italic" size="10.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label layoutX="479.0" layoutY="73.0" prefHeight="49.0" prefWidth="92.0" text="Messages" textAlignment="CENTER" textFill="#000000b9">
+         <font>
+            <Font name="Algerian" size="12.0" />
+         </font>
+      </Label>
+      <HBox layoutX="452.0" layoutY="122.0" prefHeight="371.0" prefWidth="303.0" style="-fx-border-width: 1px;">
+         <children>
+            <Pane prefHeight="371.0" prefWidth="306.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="79.0" prefWidth="92.0" text="From :" textAlignment="CENTER" textFill="#000000b9">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="101.0" prefHeight="105.0" prefWidth="92.0" text="Message :" textAlignment="CENTER" textFill="#000000b9">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="22.0" layoutY="218.0" prefHeight="85.0" prefWidth="92.0" text="To :" textAlignment="CENTER" textFill="#000000b9">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="Send" layoutX="142.0" layoutY="323.0" mnemonicParsing="false" onAction="#Send_action" prefHeight="42.0" prefWidth="52.0" text="SEND" />
+                  <TextField fx:id="From_ID" layoutX="69.0" layoutY="41.0" onAction="#From_action" prefHeight="25.0" prefWidth="219.0" />
+                  <TextField fx:id="To_ID" layoutX="68.0" layoutY="248.0" prefHeight="25.0" prefWidth="219.0" />
+                  <TextArea fx:id="Message" layoutX="78.0" layoutY="108.0" prefHeight="128.0" prefWidth="200.0" />
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

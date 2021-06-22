@@ -76,8 +76,10 @@ public class AppointmentController implements Initializable {
     @FXML
     private Pane PM_6_box;
     
-    String Appointment_Time;
+    String Appointment_Time ="";
     DatabaseHandler handler;
+    @FXML
+    private Label reschedule_appointmnet_heading;
     
 
     /**
@@ -149,17 +151,17 @@ public class AppointmentController implements Initializable {
         riset_count++;
         int choice=JOptionPane.showConfirmDialog(null, "Are you sure you want to set_up new appointment.","Confirm Appointment Operation", JOptionPane.INFORMATION_MESSAGE);
         if(choice==JOptionPane.YES_OPTION){
-           String str= "INSERT INTO APPOINTMENT(supervisor_w_appointment_mobile,AppointmentDate,"
-                      + "AppointmentHours,AppointmentMins,reset_count) VALUES(" +
+           String str= "INSERT INTO APPOINTMENTSS VALUES(" +
                 "'"+ apointee_phone +"'," +
                 "'"+ appontee_date +"'," +
+                "'"+ Appointment_Time +"'," +
                 "'"+ appointee_hrs +"'," +
                 "'"+ appointee_min +"'," +
                 ""+ riset_count + ")";
             System.out.println(str);
          if(handler.execAction(str)){
                JOptionPane.showMessageDialog(null, "Congratulations ...Student-Supervisor Appointment set Successfully Completed!"
-                       + "\n New Ameeting date is "+ appontee_date+" for "+ appointee_hrs+"hrs and "+ appointee_min+" minutes", "SUCCESSFUL", JOptionPane.INFORMATION_MESSAGE);
+                       + "\n New Ameeting date is "+ appontee_date+" at "+Appointment_Time+" for "+ appointee_hrs+"hrs and "+ appointee_min+" minutes", "SUCCESSFUL", JOptionPane.INFORMATION_MESSAGE);
             }
             else{
                 JOptionPane.showMessageDialog(null, "Issue Operation failed:" , "Error Occured", JOptionPane.ERROR_MESSAGE);
@@ -177,7 +179,7 @@ public class AppointmentController implements Initializable {
         }
         }
     }
-
+     int time=0;
     @FXML
     private void AM_7_box_cliked(MouseEvent event) {
         Appointment_Time= "7 AM";
