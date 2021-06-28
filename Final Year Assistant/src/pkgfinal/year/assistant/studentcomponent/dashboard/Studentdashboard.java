@@ -23,6 +23,7 @@ public class Studentdashboard extends Application {
         
         stage.setScene(scene);
         stage.show();
+        stage.setTitle("STUDENT DASHBOARD");
         
         DatabaseHandler.getInstance();
     }

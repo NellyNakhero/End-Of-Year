@@ -79,7 +79,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button contentDisplay="TOP" layoutX="10.0" layoutY="104.0" mnemonicParsing="false" prefHeight="94.0" prefWidth="170.0" text="Search Student" textFill="#1c0279">
+                        <Button contentDisplay="TOP" layoutX="10.0" layoutY="104.0" mnemonicParsing="false" onAction="#search_student" prefHeight="94.0" prefWidth="170.0" text="Search Student" textFill="#1c0279">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -91,7 +91,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button contentDisplay="TOP" layoutX="10.0" layoutY="198.0" mnemonicParsing="false" prefHeight="94.0" prefWidth="170.0" text="Search Supervisor" textFill="#1c0279">
+                        <Button contentDisplay="TOP" layoutX="10.0" layoutY="198.0" mnemonicParsing="false" onAction="#search_supervisor" prefHeight="94.0" prefWidth="170.0" text="Search Supervisor" textFill="#1c0279">
                            <font>
                               <Font size="15.0" />
                            </font>

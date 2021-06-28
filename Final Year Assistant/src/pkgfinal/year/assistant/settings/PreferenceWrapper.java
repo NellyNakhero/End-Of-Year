@@ -13,6 +13,8 @@ import java.io.IOException;
 import java.io.Writer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import org.apache.commons.codec.digest.DigestUtils;
 
 /**
  *
@@ -41,8 +43,9 @@ public class PreferenceWrapper {
         return password;
     }
 
-    public void setPassword(String password) {
+    public void setPassword(String password) {  
         this.password = password;
+        //this.password = DigestUtils.sha1Hex(password);
     }
     
     public static void initConfig(){
@@ -62,6 +65,7 @@ public class PreferenceWrapper {
             }
         }
     }
+    
     public static PreferenceWrapper getPreferences(){
         Gson gson= new Gson();
          PreferenceWrapper preferences= new PreferenceWrapper();
@@ -72,5 +76,26 @@ public class PreferenceWrapper {
             Logger.getLogger(PreferenceWrapper.class.getName()).log(Level.SEVERE, null, ex);
         }
         return preferences;
+    }
+    
+    public static void writePreferenceToFile(PreferenceWrapper preference){
+         Writer writer = null;         
+        try {
+            writer = new FileWriter(CONFIG_FILE);
+            Gson gson= new Gson();
+            gson.toJson(preference,writer);
+             JOptionPane.showMessageDialog(null, "SETTINGS SUCCESSFULLY UPDATED!","SUCCESS",JOptionPane.INFORMATION_MESSAGE);
+
+        } catch (IOException ex) {
+            Logger.getLogger(PreferenceWrapper.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "CAN'T SAVE CONFIGURATION FILE!","FAILED",JOptionPane.ERROR_MESSAGE);
+
+        } finally {
+            try {
+                writer.close();
+            } catch (IOException ex) {
+                Logger.getLogger(PreferenceWrapper.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }
 }

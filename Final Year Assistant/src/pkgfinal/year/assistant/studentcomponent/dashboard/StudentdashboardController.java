@@ -24,11 +24,12 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import pkgfinal.year.assistant.database.DatabaseHandler;
 import pkgfinal.year.assistant.googledrive.StoragedriveController;
+import pkgfinal.year.assistant.studentcomponent.settings.PreferenceWrapper;
 
 /**
  * FXML Controller class
  *
- * @author User
+ * @author Nelly A.
  */
 public class StudentdashboardController implements Initializable {
 
@@ -50,7 +51,15 @@ public class StudentdashboardController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         databaseHandler =DatabaseHandler.getInstance();
-    }    
+        initializeDefaultValues();
+    }   
+    
+    private void initializeDefaultValues() {
+        PreferenceWrapper preferences= PreferenceWrapper.getPreferences();
+        name_student.setText(String.valueOf(preferences.getUsername()));
+        projecttitle_student.setText(String.valueOf(preferences.getTitle()));
+    }
+    
 
     @FXML
     private void Close(ActionEvent event) {
@@ -66,7 +75,7 @@ public class StudentdashboardController implements Initializable {
 
     @FXML
     private void register_details(ActionEvent event) {
-      loadWindow("/pkgfinal/year/assistant/studentcomponent/setupbasics/studentsetupbasics.fxml", "PROJECT SET_UP BASICS PAGE");
+    loadWindow("/pkgfinal/year/assistant/studentcomponent/setupbasics/studentsetupbasics.fxml", "PROJECT SET_UP BASICS PAGE");
     }
 
     @FXML
@@ -75,16 +84,17 @@ public class StudentdashboardController implements Initializable {
 
     @FXML
     private void objectives_clicked(MouseEvent event) {
-      loadWindow("/pkgfinal/year/assistant/studentcomponent/objectives/project_objectives.fxml", "PROJECT OBJECTIVES PAGE");
+    loadWindow("/pkgfinal/year/assistant/studentcomponent/objectives/project_objectives.fxml", "PROJECT OBJECTIVES PAGE");
     }
 
     @FXML
     private void calender_clicked(MouseEvent event) {
-        loadWindow("/pkgfinal/year/assistant/studentcomponent/calendercomponent/toggle_calender.fxml", "Calender View");
+    loadWindow("/pkgfinal/year/assistant/studentcomponent/calendercomponent/toggle_calender.fxml", "Calender View");
     }
 
     @FXML
     private void settings_clicked(MouseEvent event) {
+    loadWindow("/pkgfinal/year/assistant/studentcomponent/settings/settings.fxml", "SETTINGS WINDOW");
     }
 
     @FXML
@@ -106,6 +116,6 @@ public class StudentdashboardController implements Initializable {
 
     @FXML
     private void appointment_details(ActionEvent event) {
-        //loadWindow("/pkgfinal/year/assistant/meetingappointment/appointment.fxml", "RESCHEDULE APPOINTMENTS");
+        loadWindow("/pkgfinal/year/assistant/meetingappointmentorg/appointment.fxml", "RESCHEDULE APPOINTMENTS");
     }
 }

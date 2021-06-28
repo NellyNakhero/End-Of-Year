@@ -35,6 +35,6 @@
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Final Year Assistant" >
     <param name="requiredFXVersion" value="2.2+"/>
   </applet-desc>
-  <jfx:javafx-desc  width="800" height="600" main-class="pkgfinal.year.assistant.admin.mainwidow.adminmain"  name="Final Year Assistant" />
+  <jfx:javafx-desc  width="800" height="600" main-class="pkgfinal.year.assistant.dashboard.dashboardloader"  name="Final Year Assistant" />
   <update check="always"/>
 </jnlp>

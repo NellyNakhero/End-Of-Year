@@ -23,6 +23,7 @@ public class setupbasics extends Application {
         
         stage.setScene(scene);
         stage.show();
+        stage.setTitle("SET_UP BASICS PAGE");
     }
 
     /**

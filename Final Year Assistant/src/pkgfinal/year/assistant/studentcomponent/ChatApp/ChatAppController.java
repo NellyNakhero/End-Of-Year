@@ -135,10 +135,6 @@ public class ChatAppController implements Initializable {
     }
 
     @FXML
-    private void settings_clicked(MouseEvent event) {
-    }
-
-    @FXML
     private void loadCoordinatorMessages(MouseEvent event) {
         loadWindow("/pkgfinal/year/assistant/studentcomponent/listcoordinatormessages/coordinatorMessages.fxml", "Your Conversations");
 
@@ -163,4 +159,9 @@ public class ChatAppController implements Initializable {
         }
 
        } 
+
+    @FXML
+    private void Settings_clicked(MouseEvent event) {
+        loadWindow("/pkgfinal/year/assistant/studentcomponent/settings/settings.fxml", "SETTINGS WINDOW");
+    }
 }

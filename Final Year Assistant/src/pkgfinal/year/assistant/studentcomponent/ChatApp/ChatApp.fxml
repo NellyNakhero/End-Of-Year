@@ -112,7 +112,7 @@
                   <Insets left="3.0" />
                </padding>
             </HBox>
-            <HBox layoutX="2.0" layoutY="418.0" onMouseClicked="#settings_clicked" prefHeight="47.0" prefWidth="148.0">
+            <HBox layoutX="2.0" layoutY="418.0" onMouseClicked="#Settings_clicked" prefHeight="47.0" prefWidth="148.0">
                <children>
                   <ImageView fitHeight="31.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                      <image>

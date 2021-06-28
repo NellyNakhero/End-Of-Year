@@ -6,7 +6,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="446.0" prefWidth="744.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkgfinal.year.assistant.supervisorcomponent.currentlysupervising.ListsupervisingController">
    <children>
-      <TableView fx:id="tableview" layoutY="6.0" prefHeight="446.0" prefWidth="654.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <TableView fx:id="tableview" layoutY="6.0" prefHeight="446.0" prefWidth="654.0" style="-fx-background-color: #996b99;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columns>
           <TableColumn fx:id="Reg_num" prefWidth="75.0" text="Registration Number" />
             <TableColumn fx:id="consult_col" prefWidth="75.0" text="Consulataion Count" />

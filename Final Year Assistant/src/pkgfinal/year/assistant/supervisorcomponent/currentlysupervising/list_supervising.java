@@ -29,6 +29,7 @@ public class list_supervising extends Application{
       Scene scene = new Scene(root);
       stage.setScene(scene);
       stage.show();
+      stage.setTitle("CURRENTLY SUPERVISED STUDENTS PAGE");
     }
     
 }

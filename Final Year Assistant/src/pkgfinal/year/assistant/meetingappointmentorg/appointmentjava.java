@@ -21,6 +21,7 @@ public class appointmentjava extends Application {
         
         stage.setScene(scene);
         stage.show();
+        stage.setTitle("APPOINTMENT PAGE");
     }
 
     /**

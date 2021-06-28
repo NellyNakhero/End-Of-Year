@@ -81,22 +81,28 @@ public class MainController implements Initializable {
 
     @FXML
     private void handleMenuClose(ActionEvent event) {
+        ((Stage)rootpane.getScene().getWindow()).close();
+
     }
 
     @FXML
     private void AddMenuAddStudent(ActionEvent event) {
+    loadWindow("/pkgfinal/year/assistant/addstudent/addstudent.fxml","Add Student");
     }
 
     @FXML
     private void AddMenuAddSupervisor(ActionEvent event) {
+    loadWindow("/pkgfinal/year/assistant/addsupervisor/addsupervisor.fxml","Add Supervisor");
     }
 
     @FXML
     private void LoadViewStudents(ActionEvent event) {
+    loadWindow("/pkgfinal/year/assistant/liststudents/studentlist.fxml","View All Students");
     }
 
     @FXML
     private void LoadViewSupervisors(ActionEvent event) {
+        loadWindow("/pkgfinal/year/assistant/listsupervisors/SupervisorsList.fxml","View All Supervisors");
     }
 
     @FXML
@@ -259,6 +265,7 @@ public class MainController implements Initializable {
 
     @FXML
     private void Load_Settings_Operation(ActionEvent event) {
+        loadWindow("/pkgfinal/year/assistant/admin/settings/settings.fxml","Revise Settings");    
     }
    
     void loadWindow(String loc,String title){   
@@ -332,6 +339,17 @@ public class MainController implements Initializable {
             Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
         }
         Issue_Data_List.getItems().setAll(issuedata);
+    }
+
+    @FXML
+    private void search_student(ActionEvent event) {
+     JOptionPane.showMessageDialog(null, "This feature is still under development.\n Sorry for any inconviniences" , "SYSTEM UPDATE", JOptionPane.INFORMATION_MESSAGE);
+
+    }
+
+    @FXML
+    private void search_supervisor(ActionEvent event) {
+     JOptionPane.showMessageDialog(null, "This feature is still under development.\n Sorry for any inconviniences" , "SYSTEM UPDATE", JOptionPane.INFORMATION_MESSAGE);
     }
 
        }

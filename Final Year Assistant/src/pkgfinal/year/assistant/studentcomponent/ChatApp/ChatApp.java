@@ -24,6 +24,7 @@ public class ChatApp extends Application {
         
         stage.setScene(scene);
         stage.show();
+        stage.setTitle("CHAT APPLICATION PAGE");
         
         DatabaseHandler.getInstance();
     }

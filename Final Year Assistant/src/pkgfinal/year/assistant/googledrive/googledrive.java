@@ -21,6 +21,7 @@ public class googledrive extends Application {
         
         stage.setScene(scene);
         stage.show();
+        stage.setTitle("STORAGE DRIVE WINDOW");
     }
 
     /**

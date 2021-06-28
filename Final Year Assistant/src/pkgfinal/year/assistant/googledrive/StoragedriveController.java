@@ -149,6 +149,7 @@ public class StoragedriveController implements Initializable {
 
     @FXML
     private void box_settings_clicked(MouseEvent event) {
+        loadWindow("/pkgfinal/year/assistant/studentcomponent/settings/settings.fxml", "SETTINGS WINDOW");
     }
 
     @FXML

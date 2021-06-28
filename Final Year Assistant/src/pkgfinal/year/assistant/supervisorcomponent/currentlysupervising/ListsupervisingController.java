@@ -20,8 +20,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import pkgfinal.year.assistant.database.DatabaseHandler;
-import pkgfinal.year.assistant.studentcomponent.listappointments.ListAppointmentsController;
-
 
 /**
  * FXML Controller class
