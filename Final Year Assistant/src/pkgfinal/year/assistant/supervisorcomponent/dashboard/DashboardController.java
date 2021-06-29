@@ -10,6 +10,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -42,6 +43,7 @@ public class DashboardController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    
     PreferenceWrapper preference;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -108,6 +110,34 @@ loadWindow("/pkgfinal/year/assistant/supervisorcomponent/settings/settings.fxml"
     private void chat_Clicked(MouseEvent event) {
      loadWindow("/pkgfinal/year/assistant/studentcomponent/ChatApp/ChatApp.fxml", "PROJECT CONVERSATION PAGE");
 
+    }
+
+    private void currently_Supervised_list_click(ActionEvent event) {
+    loadWindow("/pkgfinal/year/assistant/supervisorcomponent/currentlysupervising/listsupervising.fxml", "LIST SUPERVISED STUDENTS DASHBOARD");
+
+    }
+
+    private void settings_clicked(ActionEvent event) {
+loadWindow("/pkgfinal/year/assistant/supervisorcomponent/settings/settings.fxml", "SETTINGS PAGE");
+    }
+
+    private void appointments_click(ActionEvent event) {
+    loadWindow("/pkgfinal/year/assistant/studentcomponent/listappointments/listAppointments.fxml", "APPOINTMENTS PAGE");
+    }
+
+    @FXML
+    private void currently_Super_list_click(ActionEvent event) {
+        loadWindow("/pkgfinal/year/assistant/supervisorcomponent/currentlysupervising/listsupervising.fxml", "LIST SUPERVISED STUDENTS DASHBOARD");
+    }
+
+    @FXML
+    private void reset_clicked(ActionEvent event) {
+        loadWindow("/pkgfinal/year/assistant/studentcomponent/listappointments/listAppointments.fxml", "APPOINTMENTS PAGE");
+    loadWindow("/pkgfinal/year/assistant/supervisorcomponent/settings/settings.fxml", "SETTINGS PAGE");
+    }
+
+    @FXML
+    private void appointments_list_click(ActionEvent event) {
     }
     
 }

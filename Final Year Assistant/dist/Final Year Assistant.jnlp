@@ -2,8 +2,10 @@
 <jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="Final Year Assistant.jnlp">
   <information>
     <title>Final Year Assistant</title>
-    <vendor>User</vendor>
+    <vendor>Nelly A.</vendor>
     <description>null</description>
+    <icon href="src/pkgfinal/year/assistant/resources/images/information-2866135_1920.ico"  kind="splash"/>
+    <icon href="src/pkgfinal/year/assistant/resources/images/bk4.jpg" />
     <offline-allowed/>
   </information>
   <resources>
@@ -32,6 +34,7 @@
     <jar href="lib/slf4j-api-1.7.25.jar" size="41203" download="eager" />
     <jar href="lib/slf4j-simple-1.7.25.jar" size="15257" download="eager" />
   </resources>
+  <shortcut><desktop/></shortcut>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Final Year Assistant" >
     <param name="requiredFXVersion" value="2.2+"/>
   </applet-desc>

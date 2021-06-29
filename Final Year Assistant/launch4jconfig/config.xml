@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>C:\Users\User\Documents\NetBeansProjects\GIT PROJECTS\End-Of-Year\Final Year Assistant\dist\Final Year Assistant.jar</jar>
+  <outfile>C:\Users\User\Documents\NetBeansProjects\GIT PROJECTS\End-Of-Year\FinalYearAssistent Software.exe</outfile>
+  <errTitle></errTitle>
+  <cmdLine></cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl>http://java.com/download</downloadUrl>
+  <supportUrl></supportUrl>
+  <stayAlive>false</stayAlive>
+  <restartOnCrash>false</restartOnCrash>
+  <manifest></manifest>
+  <icon>C:\Users\User\Documents\NetBeansProjects\GIT PROJECTS\End-Of-Year\Final Year Assistant\src\pkgfinal\year\assistant\resources\images\information-2866135_1920.ico</icon>
+  <singleInstance>
+    <mutexName>FinalYearAssistent Software</mutexName>
+    <windowTitle>FinalYearAssistent Software</windowTitle>
+  </singleInstance>
+  <classPath>
+    <mainClass>pkgfinal.year.assistant.dashboard.dashboardloader</mainClass>
+    <cp>lib/boxable-1.5-RC.jar</cp>
+    <cp>lib/commons-codec-1.11.jar</cp>
+    <cp>lib/commons-csv-1.4.jar</cp>
+    <cp>lib/commons-lang3-3.9.jar</cp>
+    <cp>lib/commons-logging-1.2.jar</cp>
+    <cp>lib/derby.jar</cp>
+    <cp>lib/derbyclient.jar</cp>
+    <cp>lib/fontawesomefx-8.9.jar</cp>
+    <cp>lib/fontawesomefx-commons-8.15.jar</cp>
+    <cp>lib/fontawesomefx-fontawesome-4.7.0-5.jar</cp>
+    <cp>lib/fontbox-2.0.4.jar</cp>
+    <cp>lib/gson-2.8.1.jar</cp>
+    <cp>lib/guava-21.0.jar</cp>
+    <cp>lib/javax.mail-1.6.1.jar</cp>
+    <cp>lib/jfoenix-8.0.4.jar</cp>
+    <cp>lib/log4j-api-2.11.0.jar</cp>
+    <cp>lib/log4j-core-2.11.0.jar</cp>
+    <cp>lib/pdfbox-2.0.3.jar</cp>
+    <cp>lib/slf4j-api-1.7.25.jar</cp>
+    <cp>lib/slf4j-simple-1.7.25.jar</cp>
+  </classPath>
+  <jre>
+    <path></path>
+    <bundledJre64Bit>false</bundledJre64Bit>
+    <bundledJreAsFallback>false</bundledJreAsFallback>
+    <minVersion>1.8.0</minVersion>
+    <maxVersion></maxVersion>
+    <jdkPreference>preferJre</jdkPreference>
+    <runtimeBits>64/32</runtimeBits>
+  </jre>
+  <versionInfo>
+    <fileVersion>1.0.0.0</fileVersion>
+    <txtFileVersion>1.0.0.0</txtFileVersion>
+    <fileDescription>FinalYearAssistent Software</fileDescription>
+    <copyright>NIL</copyright>
+    <productVersion>1.0.0.0</productVersion>
+    <txtProductVersion>1.0.0.0</txtProductVersion>
+    <productName>FinalYearAssistent Software</productName>
+    <companyName>Nelly Arsey</companyName>
+    <internalName>FinalYearAssistent Software</internalName>
+    <originalFilename>FinalYearAssistent Software.exe</originalFilename>
+    <trademarks></trademarks>
+    <language>ENGLISH_US</language>
+  </versionInfo>
+  <messages>
+    <startupErr>An error occurred while starting the application.</startupErr>
+    <bundledJreErr>This application requires a Java Runtime Environment.</bundledJreErr>
+    <jreVersionErr>This application requires a Java Runtime Environment</jreVersionErr>
+    <launcherErr>The registry refers to a nonexistent Java Runtime Environment installation or the runtime is corrupted.</launcherErr>
+    <instanceAlreadyExistsMsg>An application instance is already running.</instanceAlreadyExistsMsg>
+  </messages>
+</launch4jConfig>
